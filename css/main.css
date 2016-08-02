@@ -1,0 +1,47 @@
+body {
+	background-color: #A9E2F5;
+	text-align: center;
+	font-family: 'Baloo Thambi', cursive;
+}
+
+h1 {
+	margin: 25px;
+	font-family: 'Bungee Shade', cursive;
+}
+
+input {
+	margin-bottom: 15px;
+}
+
+li {
+	text-align: left;
+	margin: 15px;
+	box-shadow: 5px 5px 5px;
+}
+
+ .btn-info, .btn-danger {
+	float: right;
+}
+
+/* animation */
+@-webkit-keyframes flashycolor {
+	0%   {color:red;}
+    25%  {color:yellow;}
+    50%  {color:blue;}
+    75%  {color:green;}
+    100% {color:red;}
+}
+
+@keyframes flashycolor {
+	0%   {color:red;}
+    25%  {color:yellow;}
+    50%  {color:blue;}
+    75%  {color:green;}
+    100% {color:red;}
+}
+
+.flashycolor {
+  -webkit-animation-name: flashycolor;
+  animation-name: flashycolor;
+  animation-duration: 5s;
+}
