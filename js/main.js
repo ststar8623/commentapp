@@ -71,11 +71,13 @@ function enter() {
 
 	// method for delete button
 	$("button1").click(function(){
-		// confirm("Are you sure to delete this comment?")
-		$(this).parent().parent().parent().remove();
+		confirm("Are you sure to delete this comment?")
+		if(true){
+			$(this).parent().parent().parent().remove();
+		}
 	});
 
-	// method for toogling
+	// method for toggling
 	$("button2").click(function(){
 		$('li.dropdown').click(function() {
 	   		$(this).children().toggle();
@@ -95,7 +97,13 @@ function eraseText() {
 	document.getElementById('comment').value = "";
 }
 
-
+// added a focus on textinput when the page is loaded
+function setup() {
+	var textInput;
+	textInput = document.getElementById('usr');
+	textInput.focus();
+}
+window.addEventListener('load', setup, false);
 
 
 
