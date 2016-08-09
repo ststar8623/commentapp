@@ -105,5 +105,47 @@ function setup() {
 }
 window.addEventListener('load', setup, false);
 
+// check username to have at least 5 characters
+function checkUsername() {
+	var username = elUsr.value;
+	if (username.length < 1) {
+		elUsrMsg.className = 'warning';
+		elUsrMsg.textContent = "You havn't included a username!";		
+	} else {
+		elUsrMsg.textContent = '';
+	}
+}
+function tipUsername() {
+	elUsrMsg.className = 'tip';
+	elUsrMsg.innerHTML = 'Username must be entered';
+}
+
+var elUsr = document.getElementById('usr');
+var elUsrMsg = document.getElementById('feedback');
+
+elUsr.addEventListener('focus', tipUsername, false);
+elUsr.addEventListener('blur', checkUsername, false);
+
+// add character left show after the comment
+var characterLeft;
+
+function charCount(e){
+	var textEntered, charDisplay, counter, lastkey;
+	textEntered = document.getElementById('comment').value;
+	charDisplay = document.getElementById('charactersLeft');
+	counter = (180 - (textEntered.length));
+	charDisplay.textContent = counter + ' characters left';
+}
+
+characterLeft = document.getElementById('comment');
+characterLeft.addEventListener('keyup', charCount, false);
+
+
+
+
+
+
+
+
 
 
