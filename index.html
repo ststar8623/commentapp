@@ -36,7 +36,7 @@
 					<h1>Please leave a <span class="animated flashycolor infinite">comment !</span></h1>
 					<form role="form" id="form">
 						<div class="form-group">
-							<input placeholder="username" class="form-control" id="usr">
+							<input name='username' placeholder="username" class="form-control" id="usr">
 						</div>
 						<div id="feedback"></div>
 						<div class="form-group">
@@ -45,11 +45,12 @@
 						<div id="charactersLeft"></div>
 						<div class="form-group">
 							<button id="submit" onclick="enter()" type="button" class="btn btn-default">Submit</button>
-							<button onclick="eraseText()" type="button" class="btn btn-default">Clear</button>
+							<button id="clear" onclick="eraseText()" type="button" class="btn btn-default">Clear</button>
 						</div>
 					</form>
 					<ul id="commentList" class="list-group">
 					</ul>
+					<div class="list"></div>
 				</div>
 			</div>
 		</div>
