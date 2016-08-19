@@ -117,7 +117,7 @@ function checkUsername() {
 }
 function tipUsername() {
 	elUsrMsg.className = 'tip';
-	elUsrMsg.innerHTML = 'Username must be entered';
+	elUsrMsg.innerHTML = 'A username must be entered';
 }
 
 var elUsr = document.getElementById('usr');
@@ -127,19 +127,17 @@ elUsr.addEventListener('focus', tipUsername, false);
 elUsr.addEventListener('blur', checkUsername, false);
 
 // add character left show after the comment
-var characterLeft;
+$(document).ready(function(){
+	$('#submit').click(function(){
+		$('.userName, .textarea').val('');
+	});
 
-function charCount(e){
-	var textEntered, charDisplay, counter, lastkey;
-	textEntered = document.getElementById('comment').value;
-	charDisplay = document.getElementById('charactersLeft');
-	counter = (180 - (textEntered.length));
-	charDisplay.textContent = counter + ' characters left';
-}
-
-characterLeft = document.getElementById('comment');
-characterLeft.addEventListener('keyup', charCount, false);
-
+	$('.textarea').keyup(function(){
+		var postLeft = $('.textarea').val().length;
+		var charactersLeft = 140 - postLeft;
+		$('.counter').text(charactersLeft);
+	});
+})
 
 
 

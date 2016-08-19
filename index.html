@@ -36,14 +36,15 @@
 					<h1>Please leave a <span class="animated flashycolor infinite">comment !</span></h1>
 					<form role="form" id="form">
 						<div class="form-group">
-							<input name='username' placeholder="username" class="form-control" id="usr">
+							<input name='username' placeholder="username" class="form-control userName" id="usr">
 						</div>
 						<div id="feedback"></div>
 						<div class="form-group">
-							<textarea placeholder="comment" class="form-control" rows="5" id="comment"></textarea>
+							<textarea placeholder="comment" class="form-control textarea" rows="5" id="comment"></textarea>
 						</div>
 						<div id="charactersLeft"></div>
 						<div class="form-group">
+							<p class="counter">140</p>
 							<button id="submit" onclick="enter()" type="button" class="btn btn-default">Submit</button>
 							<button id="clear" onclick="eraseText()" type="button" class="btn btn-default">Clear</button>
 						</div>
