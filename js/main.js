@@ -126,17 +126,35 @@ var elUsrMsg = document.getElementById('feedback');
 elUsr.addEventListener('focus', tipUsername, false);
 elUsr.addEventListener('blur', checkUsername, false);
 
-// add character left show after the comment
+// add character left & disable button when no comment is enter
 $(document).ready(function(){
 	$('#submit').click(function(){
 		$('.userName, .textarea').val('');
+		$('.counter').text(140);
+		$('#submit, #clear').addClass('disabled');
 	});
+	$('#clear').click(function(){
+		$('.counter').text(140);
+		$('#submit, #clear').addClass('disabled');
+	})
 
 	$('.textarea').keyup(function(){
-		var postLeft = $('.textarea').val().length;
+		var postLeft = $(this).val().length;
 		var charactersLeft = 140 - postLeft;
 		$('.counter').text(charactersLeft);
+
+		if(charactersLeft < 0) {
+			$('#submit, #clear').addClass('disabled');
+		} 
+		else if (charactersLeft == 140) {
+			$('#submit, #clear').addClass('disabled');
+		} 
+		else {
+			$('#submit, #clear').removeClass('disabled');
+		}
 	});
+
+	$('#submit, #clear').addClass('disabled');
 })
 
 
